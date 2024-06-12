@@ -1,0 +1,11 @@
+<div>
+    <h2>Futures concerts à Paris</h2>
+    <ul>
+      <li *ngFor="let concert of concerts">
+        <strong>{{ concert.name }}</strong><br>
+        Date: {{ concert.date }}<br>
+        Lieu: {{ concert.venue }}
+      </li>
+    </ul>
+  </div>
+  

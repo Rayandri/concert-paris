@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+/* Styles globaux pour un thème sombre */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h1 {
+    color: #ffcc00;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  
