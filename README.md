@@ -1,6 +1,7 @@
 # ParisGig
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+You will be able to get all available shows in Paris.
 
 ## Development server
 
