@@ -1,8 +1,11 @@
 <div>
-    <h2>Futures concerts à Paris</h2>
+    <h2 *ngIf="concerts.length > 0; else noConcerts">Futures concerts à Paris</h2>
+    <ng-template #noConcerts><h2>No concerts currently available</h2></ng-template>
     <ul>
       <li *ngFor="let concert of concerts">
         <strong>{{ concert.name }}</strong><br>
+        Artiste: {{ concert.artist }}<br>
+        Genre: {{ concert.genre }}<br>
         Date: {{ concert.date }}<br>
         Lieu: {{ concert.venue }}
       </li>
