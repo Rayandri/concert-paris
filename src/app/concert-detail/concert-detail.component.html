@@ -1,0 +1,34 @@
+<button class="btn btn-dark" (click)="goBack()">Retour aux concerts</button>
+
+<div class="container">
+  <div class="card main-content">
+    <div class="card-body">
+      <h1 class="card-title">{{ concert?.name }}</h1>
+      <p class="card-text">Artiste: {{ concert?.artist }}</p>
+      <p class="card-text">Date: {{ concert?.date }}</p>
+      <p class="card-text">Venue: {{ concert?.venue }}</p>
+      <p class="card-text">Genre: {{ concert?.genre }}</p>
+      <img [src]="concert?.imageUrl" class="card-img-top" alt="{{ concert?.name }} image">
+      <p class="card-text">{{ concert?.description }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card top-songs">
+    <div class="card-body">
+      <h2 class="card-title">Top 5 des chansons de {{ concert?.artist }}</h2>
+      <div class="song-list">
+        <div *ngFor="let song of topSongs" class="song-card">
+          <img [src]="song.album.cover_medium" alt="Album Cover" class="song-img">
+          <div class="song-details">
+            <h3>{{ song.title }}</h3>
+            <p>Rank: {{ song.rank }}</p>
+            <a [href]="song.link" class="btn btn-warning">Écouter sur Deezer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

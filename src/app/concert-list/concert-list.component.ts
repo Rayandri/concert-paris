@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConcertService } from '../concert.service';
+import { Router } from '@angular/router';
 import { Concert } from '../concert.model';
 
 @Component({
@@ -10,14 +10,12 @@ import { Concert } from '../concert.model';
 export class ConcertListComponent implements OnInit {
   concerts: Concert[] = [];
 
-  constructor(private concertService: ConcertService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.getConcerts();
   }
 
-  getConcerts(): void {
-    this.concertService.getConcerts()
-      .subscribe(concerts => this.concerts = concerts);
+  navigateToConcertDetail(id: string): void {
+    this.router.navigate(['/concert', id]);
   }
 }

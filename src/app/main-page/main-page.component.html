@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Concerts à venir</h2>
+</div>
+
+<div class="container">
+  <div class="filters-container">
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="country" class="form-label">Pays :</label>
+        <select id="country" [(ngModel)]="selectedCountry" (change)="onCountryChange()" class="form-select">
+          <option value="">Tous les pays</option>
+          <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="genre" class="form-label">Genre :</label>
+        <input type="text" id="genre" [(ngModel)]="selectedGenre" (change)="applyFilters()" class="form-control"
+          placeholder="Ex: Rock, Pop">
+      </div>
+      <div class="col-md-4">
+        <label for="artist" class="form-label">Artiste :</label>
+        <input type="text" id="artist" [(ngModel)]="searchTerm" (change)="applyFilters()" class="form-control"
+          placeholder="Nom de l'artiste">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div>
+    <div class="row">
+      <div *ngFor="let concert of concerts" class="col-md-4 mb-3">
+        <div class="card h-100" (click)="showConcertDetails(concert)">
+          <img [src]="concert.imageUrl" class="card-img-top" alt="{{ concert.name }} image">
+          <div class="card-body">
+            <h5 class="card-title">{{ concert.name }}</h5>
+            <p class="card-text"><strong>Artiste :</strong> {{ concert.artist }}</p>
+            <p class="card-text"><strong>Date :</strong> {{ concert.date }}</p>
+            <p class="card-text"><strong>Lieu :</strong> {{ concert.venue }}</p>
+            <p class="card-text"><strong>Genre :</strong> {{ concert.genre }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
